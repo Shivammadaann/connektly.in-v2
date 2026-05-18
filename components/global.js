@@ -730,7 +730,7 @@
                   <div class="mega-menu__column">
                     <span class="mega-menu__heading">Messaging</span>
                     <a href="/solutions/unified-inbox">
-                      <span class="dropdown-item-icon">IN</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg></span>
                       <span>
                         <span class="dropdown-item-label">Unified Inbox</span>
                         <span class="dropdown-item-desc">Manage every customer conversation in one place.</span>
@@ -740,28 +740,28 @@
                   <div class="mega-menu__column">
                     <span class="mega-menu__heading">WhatsApp Business API</span>
                     <a href="/solutions/whatsapp-api">
-                      <span class="dropdown-item-icon">WA</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
                       <span>
                         <span class="dropdown-item-label">Explore Whatsapp Business API</span>
                         <span class="dropdown-item-desc">Build official WhatsApp communication workflows.</span>
                       </span>
                     </a>
                     <a href="/solutions/whatsapp-calling">
-                      <span class="dropdown-item-icon">WC</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
                       <span>
                         <span class="dropdown-item-label">WhatsApp Business Calling</span>
                         <span class="dropdown-item-desc">Enable direct voice calls with customers.</span>
                       </span>
                     </a>
                     <a href="/solutions/whatsapp-marketing">
-                      <span class="dropdown-item-icon">WM</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></span>
                       <span>
                         <span class="dropdown-item-label">WhatsApp Marketing Campaigns</span>
                         <span class="dropdown-item-desc">Broadcast updates and offers to your audience.</span>
                       </span>
                     </a>
                     <a href="/solutions/ctwa">
-                      <span class="dropdown-item-icon">AD</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span>
                       <span>
                         <span class="dropdown-item-label">Click to WhatsApp Ads (CTWA)</span>
                         <span class="dropdown-item-desc">Run meta ads that start conversations instantly.</span>
@@ -771,14 +771,14 @@
                   <div class="mega-menu__column">
                     <span class="mega-menu__heading">Workflows</span>
                     <a href="/features">
-                      <span class="dropdown-item-icon">AU</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></span>
                       <span>
                         <span class="dropdown-item-label">Automation</span>
                         <span class="dropdown-item-desc">Route, qualify, and follow up without manual handoffs.</span>
                       </span>
                     </a>
                     <a href="/pricing">
-                      <span class="dropdown-item-icon">PR</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg></span>
                       <span>
                         <span class="dropdown-item-label">Plans & Scaling</span>
                         <span class="dropdown-item-desc">Choose the right plan for your messaging operation.</span>
@@ -804,14 +804,14 @@
                   <div class="mega-menu__column">
                     <span class="mega-menu__heading">Company</span>
                     <a href="/blogs">
-                      <span class="dropdown-item-icon">BL</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></span>
                       <span>
                         <span class="dropdown-item-label">Blogs</span>
                         <span class="dropdown-item-desc">Insights, updates, and tutorials.</span>
                       </span>
                     </a>
                     <a href="/faq">
-                      <span class="dropdown-item-icon">FAQ</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span>
                       <span>
                         <span class="dropdown-item-label">FAQ</span>
                         <span class="dropdown-item-desc">Answers to commonly asked questions.</span>
@@ -821,14 +821,14 @@
                   <div class="mega-menu__column">
                     <span class="mega-menu__heading">Support</span>
                     <a href="/help">
-                      <span class="dropdown-item-icon">HC</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line><line x1="14.83" y1="9.17" x2="18.36" y2="5.64"></line><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line></svg></span>
                       <span>
                         <span class="dropdown-item-label">Help Center</span>
                         <span class="dropdown-item-desc">Support guides for using Connektly.</span>
                       </span>
                     </a>
                     <a href="/contact">
-                      <span class="dropdown-item-icon">CS</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
                       <span>
                         <span class="dropdown-item-label">Contact Support</span>
                         <span class="dropdown-item-desc">Reach the team for account help.</span>
@@ -838,21 +838,21 @@
                   <div class="mega-menu__column">
                     <span class="mega-menu__heading">Legal</span>
                     <a href="/privacy-policy">
-                      <span class="dropdown-item-icon">PP</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg></span>
                       <span>
                         <span class="dropdown-item-label">Privacy Policy</span>
                         <span class="dropdown-item-desc">How we collect, use, and handle data.</span>
                       </span>
                     </a>
                     <a href="/terms-of-service">
-                      <span class="dropdown-item-icon">TS</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></span>
                       <span>
                         <span class="dropdown-item-label">Terms of Service</span>
                         <span class="dropdown-item-desc">Guidelines and rules for the service.</span>
                       </span>
                     </a>
                     <a href="/data-deletion">
-                      <span class="dropdown-item-icon">DD</span>
+                      <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></span>
                       <span>
                         <span class="dropdown-item-label">Data Deletion</span>
                         <span class="dropdown-item-desc">Request safe deletion of your data.</span>
