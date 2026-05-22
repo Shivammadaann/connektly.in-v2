@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -1726,11 +1726,11 @@
         <div class="pricing-grid">
           <article class="price-card reveal">
             <header class="price-card__header">
-              <h3>Developer</h3>
-              <p class="price-card__lede">For testing WhatsApp API flows, pilots, and small side projects.</p>
+              <h3>Growth</h3>
+              <p class="price-card__lede">For testing WhatsApp API flows, pilots, and growing conversational operations.</p>
             </header>
             <div class="price-card__price">
-              <strong class="price-animated" data-monthly="$0" data-annual="$0">$0<span>/month</span></strong>
+              <strong class="price-animated" data-monthly="₹999" data-annual="₹799">₹999<span>/month</span></strong>
               <p class="price-card__billing" data-billing>Always free to start</p>
             </div>
             <ul class="price-card__features">
@@ -1757,11 +1757,11 @@
           <article class="price-card price-card--featured reveal">
             <div class="price-card__badge">Most popular</div>
             <header class="price-card__header">
-              <h3>Business</h3>
-              <p class="price-card__lede">For growing companies that need reliable customer communication at scale.</p>
+              <h3>Starter</h3>
+              <p class="price-card__lede">For businesses that need reliable customer communication at scale.</p>
             </header>
             <div class="price-card__price">
-              <strong class="price-animated" data-monthly="$49" data-annual="$39">$49<span>/month</span></strong>
+              <strong class="price-animated" data-monthly="₹1,999" data-annual="₹1,599">₹1,999<span>/month</span></strong>
               <p class="price-card__billing" data-billing>+ Meta conversational pricing</p>
             </div>
             <ul class="price-card__features">
@@ -1791,11 +1791,11 @@
 
           <article class="price-card reveal">
             <header class="price-card__header">
-              <h3>Enterprise</h3>
+              <h3>Pro</h3>
               <p class="price-card__lede">For high-volume teams, custom compliance needs, and advanced integrations.</p>
             </header>
             <div class="price-card__price">
-              <strong class="price-animated" data-monthly="Custom" data-annual="Custom">Custom</strong>
+              <strong class="price-animated" data-monthly="₹3,499" data-annual="₹2,799">₹3,499<span>/month</span></strong>
               <p class="price-card__billing" data-billing>Volume pricing available</p>
             </div>
             <ul class="price-card__features">
@@ -1939,9 +1939,9 @@
             <thead>
               <tr>
                 <th>Capability</th>
-                <th>Developer</th>
-                <th>Business</th>
-                <th>Enterprise</th>
+                <th>Growth</th>
+                <th>Starter</th>
+                <th>Pro</th>
               </tr>
             </thead>
             <tbody>
@@ -2039,12 +2039,12 @@
           const card = node.closest(".price-card");
           const planName = card?.querySelector("h3")?.textContent?.trim();
 
-          if (planName === "Developer") {
+          if (planName === "Growth") {
             node.textContent = "Always free to start";
             return;
           }
 
-          if (planName === "Enterprise") {
+          if (planName === "Pro") {
             node.textContent = cycle === "annual" ? "Annual volume terms available" : "Volume pricing available";
             return;
           }
@@ -2056,7 +2056,7 @@
         });
 
         if (heroPrice) {
-          heroPrice.textContent = cycle === "annual" ? "$39" : "$49";
+          heroPrice.textContent = cycle === "annual" ? "₹1,599" : "₹1,999";
         }
       }
 

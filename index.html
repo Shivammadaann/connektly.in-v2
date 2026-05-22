@@ -3629,49 +3629,48 @@
     .sticky-social-bar {
       position: fixed;
       top: 50%;
-      right: 0;
-      transform: translate(calc(100% - 0.8rem), -50%);
+      right: 1.25rem;
+      transform: translateY(-50%);
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 0.85rem 0.7rem 0.85rem 1rem;
-      border-radius: 999px 0 0 999px;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      border-right: 0;
-      backdrop-filter: blur(8px);
+      background: rgba(10, 18, 32, 0.76); /* Dark premium glass capsule */
+      padding: 1rem 0.75rem;
+      border-radius: 999px;
+      box-shadow: 
+        0 20px 48px rgba(8, 13, 24, 0.26),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       transition:
         transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
         background 220ms ease,
+        border-color 220ms ease,
         box-shadow 220ms ease;
     }
 
     .sticky-social-bar::before {
       content: "";
       position: absolute;
-      left: 0.28rem;
-      top: 50%;
-      width: 0.22rem;
-      height: 2.5rem;
+      left: 50%;
+      top: -0.42rem;
+      width: 1.25rem;
+      height: 2px;
       border-radius: 999px;
-      background: linear-gradient(180deg, #18bf63, #16b7ff);
-      transform: translateY(-50%);
-      transition: opacity 220ms ease, transform 220ms ease;
+      background: linear-gradient(90deg, #18bf63, #16b7ff);
+      transform: translateX(-50%);
+      opacity: 0.72;
     }
 
-    .sticky-social-bar:hover,
-    .sticky-social-bar:focus-within {
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 14px 34px rgba(15, 54, 41, 0.16);
-    }
-
-    .sticky-social-bar:hover::before,
-    .sticky-social-bar:focus-within::before {
-      opacity: 0;
-      transform: translateY(-50%) scaleY(0.7);
+    .sticky-social-bar:hover {
+      background: rgba(10, 18, 32, 0.86);
+      border-color: rgba(37, 218, 123, 0.35);
+      box-shadow: 
+        0 24px 58px rgba(8, 13, 24, 0.36),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      transform: translateY(-50%) scale(1.03);
     }
 
     .sticky-social-link {
@@ -3681,46 +3680,42 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: #f8fafc;
-      transition: all 0.2s ease;
-      border: 1px solid rgba(0, 0, 0, 0.03);
-      opacity: 0;
-      pointer-events: none;
-      transform: translateX(0.65rem) scale(0.9);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      opacity: 0.82;
+      pointer-events: auto;
+      transform: scale(1);
       transition:
         opacity 220ms ease,
-        transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+        transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+        background 220ms ease,
+        border-color 220ms ease,
         box-shadow 220ms ease;
     }
 
-    .sticky-social-bar:hover .sticky-social-link,
-    .sticky-social-bar:focus-within .sticky-social-link {
+    .sticky-social-link img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      transition: transform 220ms ease;
+    }
+
+    .sticky-social-link:hover {
       opacity: 1;
-      pointer-events: auto;
-      transform: translateX(0) scale(1);
+      transform: scale(1.14);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(37, 218, 123, 0.42);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
     }
 
-    .sticky-social-bar:hover .sticky-social-link:nth-child(2),
-    .sticky-social-bar:focus-within .sticky-social-link:nth-child(2) {
-      transition-delay: 40ms;
-    }
-
-    .sticky-social-bar:hover .sticky-social-link:nth-child(3),
-    .sticky-social-bar:focus-within .sticky-social-link:nth-child(3) {
-      transition-delay: 80ms;
-    }
-
-    .sticky-social-bar:hover .sticky-social-link:hover,
-    .sticky-social-bar:focus-within .sticky-social-link:focus-visible {
-      transform: scale(1.15) translateX(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    .sticky-social-link:hover img {
+      transform: scale(1.10);
     }
 
     @media (max-width: 768px) {
       .sticky-social-bar {
-        right: 0;
-        transform: translate(calc(100% - 0.7rem), -50%);
-        padding: 0.65rem 0.5rem;
+        right: 0.75rem;
+        padding: 0.85rem 0.6rem;
         gap: 0.65rem;
       }
 
@@ -3729,10 +3724,9 @@
         height: 32px;
       }
 
-      .sticky-social-link svg,
       .sticky-social-link img {
-        width: 16px;
-        height: 16px;
+        width: 15px;
+        height: 15px;
       }
     }
 
@@ -7436,12 +7430,12 @@
 
       <div class="pricing__grid">
         <div class="compact-pricing-grid">
-          <!-- Developer -->
+          <!-- Growth Plan -->
           <article class="compact-price-card reveal">
-            <h3>Starter</h3>
-            <p class="compact-price-card__lede">Perfect for testing and small side projects.</p>
+            <h3>Growth</h3>
+            <p class="compact-price-card__lede">Perfect for testing and growing conversational workflows.</p>
             <div class="compact-price-card__price">
-              <strong>â‚¹999<span> /month</span></strong>
+              <strong>₹999<span> /month</span></strong>
             </div>
             <ul class="compact-price-card__features">
               <li>1,000 free conversations / mo</li>
@@ -7449,21 +7443,16 @@
               <li>Community support</li>
               <li>Basic analytics</li>
             </ul>
-            <a href="/contact" class="compact-price-card__btn compact-price-card__btn--light">Get Started
-              Free</a>
+            <a href="/contact" class="compact-price-card__btn compact-price-card__btn--light">Get Started Free</a>
           </article>
 
-
-
-
-
-          <!-- Business -->
+          <!-- Starter Plan -->
           <article class="compact-price-card compact-price-card--dark reveal">
             <div class="compact-price-card__badge">MOST POPULAR</div>
-            <h3>Growth</h3>
-            <p class="compact-price-card__lede">For growing companies needing reliability.</p>
+            <h3>Starter</h3>
+            <p class="compact-price-card__lede">For businesses that need reliable customer communication at scale.</p>
             <div class="compact-price-card__price">
-              <strong>â‚¹1,999<span> /month</span></strong>
+              <strong>₹1,999<span> /month</span></strong>
             </div>
             <p class="compact-price-card__addon">+ Meta conversational pricing</p>
             <ul class="compact-price-card__features">
@@ -7473,16 +7462,15 @@
               <li>Template approval dashboard</li>
               <li>Priority email support</li>
             </ul>
-            <a href="/contact" class="compact-price-card__btn compact-price-card__btn--primary">Start 14-Day
-              Trial</a>
+            <a href="/contact" class="compact-price-card__btn compact-price-card__btn--primary">Start 14-Day Trial</a>
           </article>
 
-          <!-- Enterprise -->
+          <!-- Pro Plan -->
           <article class="compact-price-card reveal">
             <h3>Pro</h3>
-            <p class="compact-price-card__lede">Custom solutions for large scale operations.</p>
+            <p class="compact-price-card__lede">Custom solutions for large scale operations and integrations.</p>
             <div class="compact-price-card__price">
-              <strong style="font-size: 2.2rem;">Custom</strong>
+              <strong>₹3,499<span> /month</span></strong>
             </div>
             <ul class="compact-price-card__features">
               <li>Volume discount pricing</li>
@@ -7491,13 +7479,8 @@
               <li>Custom integrations</li>
               <li>SSO & Advanced Security</li>
             </ul>
-            <a href="/contact" class="compact-price-card__btn compact-price-card__btn--ghost">Contact
-              Sales</a>
+            <a href="/contact" class="compact-price-card__btn compact-price-card__btn--ghost">Contact Sales</a>
           </article>
-
-
-
-
         </div>
       </div>
     </section>
