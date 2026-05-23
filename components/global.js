@@ -39,6 +39,300 @@
     const style = document.createElement("style");
     style.id = "connektly-header-mega-menu-styles";
     style.textContent = `
+      [data-site-header] {
+        display: block;
+        min-height: calc(var(--site-header-shell-height) + var(--site-header-gap, 0rem));
+      }
+
+      .site-header {
+        position: fixed;
+        top: calc(var(--announcement-bar-height, 0px) + var(--site-header-gap, 0rem));
+        left: 0;
+        z-index: 35;
+        width: 100%;
+        margin: 0;
+        padding: 1rem max(1.25rem, calc((100vw - var(--max-width, 1200px)) / 2 + 1.25rem));
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 1rem;
+        border: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 0;
+        background: #111827;
+        color: #ffffff;
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 8px 24px rgba(24, 60, 47, 0.08);
+        transition: background 300ms ease, backdrop-filter 300ms ease, box-shadow 300ms ease;
+      }
+
+      .site-header.is-scrolled {
+        background: #111827;
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.85rem;
+        min-width: 0;
+        justify-self: start;
+      }
+
+      .brand__mark {
+        position: relative;
+        width: 2.9rem;
+        height: 2.9rem;
+        display: grid;
+        place-items: center;
+        font-family: "Sora", sans-serif;
+        font-weight: 700;
+        color: #082012;
+        background: #18bf63;
+        border-radius: 1rem;
+        box-shadow: inset 0 -8px 20px rgba(0, 0, 0, 0.14);
+      }
+
+      .brand__mark img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .brand__mark::after {
+        content: "";
+        position: absolute;
+        left: 0.4rem;
+        bottom: -0.28rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        background: inherit;
+        border-radius: 0 0 0.7rem 0;
+        transform: rotate(34deg);
+      }
+
+      .brand__mark--image {
+        padding: 0.08rem;
+        background: #ffffff;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+      }
+
+      .brand__mark--image::after {
+        display: none;
+      }
+
+      .brand__text {
+        display: grid;
+      }
+
+      .brand__text strong {
+        font-family: "Sora", sans-serif;
+        font-size: 1rem;
+        line-height: 1;
+        color: #ffffff;
+      }
+
+      .brand__text small {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.75rem;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        justify-self: center;
+      }
+
+      .header-actions {
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+      }
+
+      .header-actions .nav-login,
+      .mobile-actions .nav-login {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: color 180ms ease, transform 180ms ease;
+      }
+
+      .header-actions .nav-login:hover,
+      .mobile-actions .nav-login:hover {
+        color: #5B45FF;
+        transform: translateY(-1px);
+      }
+
+      .mobile-actions {
+        display: none;
+      }
+
+      .site-nav>a:not(.button),
+      .nav-dropdown__toggle {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: color 180ms ease, transform 180ms ease;
+      }
+
+      .site-nav>a:not(.button):hover,
+      .site-nav>a:not(.button).is-active,
+      .nav-dropdown__toggle:hover,
+      .nav-dropdown[open]>.nav-dropdown__toggle,
+      .nav-dropdown--current>.nav-dropdown__toggle {
+        color: #5B45FF;
+        transform: translateY(-1px);
+      }
+
+      .nav-dropdown {
+        position: relative;
+      }
+
+      .nav-dropdown__toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        cursor: pointer;
+        list-style: none;
+        background: transparent;
+        border: none;
+        padding: 0;
+        font-family: inherit;
+      }
+
+      .nav-dropdown__toggle::-webkit-details-marker {
+        display: none;
+      }
+
+      .nav-dropdown__toggle::after {
+        content: "";
+        width: 0.46rem;
+        height: 0.46rem;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-1px);
+        transform-origin: center;
+        transition: transform 180ms ease, opacity 180ms ease;
+        opacity: 0.82;
+      }
+
+      .nav-dropdown:hover>.nav-dropdown__toggle::after,
+      .nav-dropdown[open]>.nav-dropdown__toggle::after {
+        transform: rotate(225deg) translate(-1px, -1px);
+        opacity: 1;
+      }
+
+      .nav-dropdown__menu {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        left: 50%;
+        z-index: 40;
+        display: block;
+        min-width: 260px;
+        max-width: 300px;
+        padding: 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1.25rem;
+        background: #0d1a24;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+        transform: translateX(-50%) translateY(10px) scale(0.95);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 250ms cubic-bezier(0.16, 1, 0.3, 1), transform 250ms cubic-bezier(0.16, 1, 0.3, 1), visibility 250ms;
+      }
+
+      .nav-dropdown__menu::before {
+        content: "";
+        position: absolute;
+        top: -1rem;
+        left: 0;
+        right: 0;
+        height: 1rem;
+      }
+
+      .nav-dropdown:hover .nav-dropdown__menu,
+      .nav-dropdown[open] .nav-dropdown__menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0) scale(1);
+      }
+
+      .nav-dropdown__menu-inner {
+        display: grid;
+        gap: 0.25rem;
+      }
+
+      .nav-dropdown__menu a {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.85rem 1rem;
+        border-radius: 0.85rem;
+        transition: all 200ms ease;
+        background: transparent;
+        gap: 0.25rem;
+      }
+
+      .dropdown-item-label {
+        color: #e2e8f0;
+        font-weight: 600;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .dropdown-item-desc {
+        color: #94a3b8;
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 1.5;
+        transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .nav-dropdown__menu a:hover .dropdown-item-label,
+      .nav-dropdown__menu a.is-active .dropdown-item-label {
+        color: #5B45FF;
+      }
+
+      .nav-dropdown__menu a:hover .dropdown-item-desc,
+      .nav-dropdown__menu a.is-active .dropdown-item-desc {
+        color: #cbd5e1;
+      }
+
+      .nav-dropdown__menu a:hover,
+      .nav-dropdown__menu a.is-active {
+        background: rgba(255, 255, 255, 0.06);
+        transform: translateX(4px);
+      }
+
+      .nav-dropdown__menu--lg {
+        min-width: 340px;
+        max-width: 380px;
+      }
+
+      .nav-toggle {
+        display: none;
+        width: 3rem;
+        height: 3rem;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .nav-toggle span {
+        display: block;
+        width: 1.1rem;
+        height: 2px;
+        margin: 0.23rem auto;
+        background: #ffffff;
+        transition: transform 180ms ease, opacity 180ms ease;
+      }
+
       @media (min-width: 821px) {
         .nav-dropdown__menu.nav-dropdown__menu--mega {
           top: calc(100% + 0.78rem) !important;
@@ -1167,66 +1461,54 @@
         <nav class="site-nav" id="site-nav" aria-label="Primary">
           <a href="/">Home</a>
           <div class="nav-dropdown">
-            <button class="nav-dropdown__toggle" type="button" aria-expanded="false">Solutions</button>
+            <button class="nav-dropdown__toggle" type="button" aria-expanded="false">Product</button>
             <div class="nav-dropdown__menu nav-dropdown__menu--mega nav-dropdown__menu--solutions">
               <div class="mega-menu mega-menu--solutions">
                 <div class="mega-menu__column">
-                  <span class="mega-menu__heading">Capture Leads</span>
-                  <a href="/solutions/whatsapp-api">
-                    <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg></span>
+                  <span class="mega-menu__heading">Channels</span>
+                  <a href="/product/whatsapp">
+                    <span class="dropdown-item-icon" style="padding: 4px;"><img src="${fromRoot("Social Media Icons/WhatsApp.svg")}" style="width: 100%; height: 100%; object-fit: contain;" alt="WhatsApp" /></span>
                     <span>
-                      <span class="dropdown-item-label">Capture from Ads</span>
+                      <span class="dropdown-item-label">WhatsApp Business</span>
                     </span>
                   </a>
-                  <a href="/solutions/whatsapp-api">
-                    <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></span>
+                  <a href="/product/messenger">
+                    <span class="dropdown-item-icon" style="padding: 4px;"><img src="${fromRoot("Social Media Icons/Messenger.svg")}" style="width: 100%; height: 100%; object-fit: contain;" alt="Messenger" /></span>
                     <span>
-                      <span class="dropdown-item-label">Capture from Social</span>
+                      <span class="dropdown-item-label">Messenger</span>
                     </span>
                   </a>
-                  <a href="/solutions/whatsapp-api">
-                    <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></span>
+                  <a href="/product/instagram">
+                    <span class="dropdown-item-icon" style="padding: 4px;"><img src="${fromRoot("Social Media Icons/Instagram.png")}" style="width: 100%; height: 100%; object-fit: contain;" alt="Instagram" /></span>
                     <span>
-                      <span class="dropdown-item-label">Capture from Website</span>
-                    </span>
-                  </a>
-                  <a href="/solutions/whatsapp-api">
-                    <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></span>
-                    <span>
-                      <span class="dropdown-item-label">Capture from Offline</span>
+                      <span class="dropdown-item-label">Instagram</span>
                     </span>
                   </a>
                 </div>
                 <div class="mega-menu__column">
-                  <span class="mega-menu__heading">Convert Leads</span>
-                  <a href="/features">
-                    <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path></svg></span>
+                  <span class="mega-menu__heading">Features</span>
+                  <a href="/product/whatsapp-calling">
+                    <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
                     <span>
-                      <span class="dropdown-item-label">AI Agents ✨</span>
+                      <span class="dropdown-item-label">WhatsApp Business Calling API</span>
                     </span>
                   </a>
-                  <a href="/solutions/whatsapp-api">
+                  <a href="/product/broadcast">
+                    <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path></svg></span>
+                    <span>
+                      <span class="dropdown-item-label">Broadcast Campaigns</span>
+                    </span>
+                  </a>
+                  <a href="/product/team-inbox">
                     <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg></span>
                     <span>
                       <span class="dropdown-item-label">Team Inbox</span>
                     </span>
                   </a>
-                  <a href="/features">
-                    <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg></span>
+                  <a href="/product/automation">
+                    <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></span>
                     <span>
-                      <span class="dropdown-item-label">Qualify Leads</span>
-                    </span>
-                  </a>
-                  <a href="/features">
-                    <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg></span>
-                    <span>
-                      <span class="dropdown-item-label">Route Leads</span>
-                    </span>
-                  </a>
-                  <a href="/features">
-                    <span class="dropdown-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
-                    <span>
-                      <span class="dropdown-item-label">Book Appointments</span>
+                      <span class="dropdown-item-label">Automation Builder</span>
                     </span>
                   </a>
                 </div>
@@ -1298,37 +1580,7 @@
               </div>
             </div>
           </div>
-          <div class="nav-dropdown">
-            <button class="nav-dropdown__toggle" type="button" aria-expanded="false">Features</button>
-            <div class="nav-dropdown__menu nav-dropdown__menu--mega nav-dropdown__menu--features">
-              <div class="mega-menu mega-menu--features">
-                <div class="mega-menu__column">
-                  <span class="mega-menu__heading">Channels and Integrations</span>
-                  <a href="/solutions/whatsapp-api" class="has-desc">
-                    <span class="dropdown-item-icon" style="padding: 4px;"><img src="${fromRoot("Social Media Icons/WhatsApp.svg")}" style="width: 100%; height: 100%; object-fit: contain;" alt="WhatsApp" /></span>
-                    <span>
-                      <span class="dropdown-item-label">WhatsApp Business</span>
-                      <span class="dropdown-item-desc">Engage customers on the world's most popular messaging app</span>
-                    </span>
-                  </a>
-                  <a href="/features/messenger/" class="has-desc">
-                    <span class="dropdown-item-icon" style="padding: 4px;"><img src="${fromRoot("Social Media Icons/Messenger.svg")}" style="width: 100%; height: 100%; object-fit: contain;" alt="Messenger" /></span>
-                    <span>
-                      <span class="dropdown-item-label">Messenger</span>
-                      <span class="dropdown-item-desc">Connect with billions of users on Facebook Messenger</span>
-                    </span>
-                  </a>
-                  <a href="/features" class="has-desc">
-                    <span class="dropdown-item-icon" style="padding: 4px;"><img src="${fromRoot("Social Media Icons/Instagram.png")}" style="width: 100%; height: 100%; object-fit: contain;" alt="Instagram" /></span>
-                    <span>
-                      <span class="dropdown-item-label">Instagram</span>
-                      <span class="dropdown-item-desc">Turn followers into customers through Instagram Direct</span>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+
           <a href="/pricing">Pricing</a>
           <div class="nav-dropdown">
             <button class="nav-dropdown__toggle" type="button" aria-expanded="false">Resources</button>
