@@ -2512,6 +2512,790 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ==========================================================================
+       Premium Features Showcase Section
+       ========================================================================== */
+    .premium-features-section {
+      background: #090d16;
+      position: relative;
+      isolation: isolate;
+      padding: clamp(4rem, 8vw, 8rem) max(1.25rem, calc((100vw - var(--max-width)) / 2));
+      overflow: visible;
+    }
+
+    .premium-features-section::before {
+      content: "";
+      position: absolute;
+      top: 15%;
+      left: 10%;
+      width: clamp(20rem, 40vw, 45rem);
+      height: clamp(20rem, 40vw, 45rem);
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(37, 218, 123, 0.08) 0%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .premium-features-section::after {
+      content: "";
+      position: absolute;
+      bottom: 15%;
+      right: 10%;
+      width: clamp(20rem, 40vw, 45rem);
+      height: clamp(20rem, 40vw, 45rem);
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(22, 183, 255, 0.07) 0%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .pf-header {
+      text-align: center;
+      margin-bottom: clamp(3rem, 6vw, 5.5rem);
+    }
+
+    .pf-header h2 {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(2.2rem, 4.2vw, 4.4rem);
+      font-weight: 800;
+      color: #ffffff !important;
+      letter-spacing: -0.05em;
+      line-height: 1.05;
+      margin: 0 0 0.85rem 0;
+    }
+
+    .pf-header p {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(0.85rem, 1.1vw, 1.15rem);
+      font-weight: 800;
+      color: #25da7b;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 0;
+    }
+
+    .pf-container {
+      display: flex;
+      flex-direction: column;
+      gap: 4.5rem;
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .pf-block {
+      position: relative;
+      background: rgba(17, 24, 39, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.8rem, 3.5vw, 3.5rem);
+      box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      overflow: visible;
+      transition: border-color 300ms ease, box-shadow 300ms ease;
+    }
+
+    .pf-block:hover {
+      border-color: rgba(37, 218, 123, 0.2);
+      box-shadow: 
+        0 34px 90px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(37, 218, 123, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .pf-block-badge {
+      position: absolute;
+      top: 0;
+      transform: translateY(-50%);
+      font-family: "Sora", sans-serif;
+      font-size: 0.76rem;
+      font-weight: 900;
+      padding: 0.55rem 1.15rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .pf-block-badge--blue {
+      left: clamp(1.5rem, 3vw, 3.5rem);
+      background: #2563eb;
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
+    }
+
+    .pf-block-badge--yellow {
+      right: clamp(1.5rem, 3vw, 3.5rem);
+      background: #eab308;
+      color: #1e1b4b;
+      box-shadow: 0 8px 24px rgba(234, 179, 8, 0.4);
+    }
+
+    .pf-block-badge--teal {
+      left: clamp(1.5rem, 3vw, 3.5rem);
+      background: #0d9488;
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(13, 148, 136, 0.45);
+    }
+
+    .pf-block-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(2rem, 4vw, 4.5rem);
+      align-items: center;
+    }
+
+    .pf-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: clamp(1.8rem, 3vw, 2.8rem);
+      box-shadow: 
+        0 24px 60px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      align-items: flex-start;
+      text-align: left;
+      z-index: 2;
+    }
+
+    .pf-card-tag {
+      background: #10b981;
+      color: #ffffff;
+      font-family: "Sora", sans-serif;
+      font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+      font-weight: 800;
+      padding: 0.65rem 1.3rem;
+      border-radius: 999px;
+      line-height: 1.25;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+    }
+
+    .pf-card-desc {
+      font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+      line-height: 1.68;
+      color: #374151;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    /* Mockups & Visual elements CSS styling */
+    .pf-visual {
+      position: relative;
+      width: 100%;
+      height: 310px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    /* Mockup 1: Broadcast Dashboard UI */
+    .pf-visual--broadcast {
+      background: radial-gradient(circle at center, rgba(37, 218, 123, 0.05) 0%, transparent 70%);
+    }
+
+    .broad-win {
+      width: 85%;
+      height: 76%;
+      background: #1e293b;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+      padding: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      overflow: hidden;
+    }
+
+    .broad-win-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 0.4rem;
+    }
+
+    .broad-win-dots {
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    .broad-win-dots i {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+    }
+
+    .broad-win-dots i:nth-child(1) { background: #ef4444; }
+    .broad-win-dots i:nth-child(2) { background: #f59e0b; }
+    .broad-win-dots i:nth-child(3) { background: #10b981; }
+
+    .broad-win-title {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .broad-win-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      height: 100%;
+      justify-content: center;
+    }
+
+    .broad-win-line {
+      height: 6px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.06);
+      width: 80%;
+    }
+
+    .broad-win-line--short {
+      width: 50%;
+    }
+
+    /* Modal dialog */
+    .broad-modal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -46%);
+      width: 82%;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #10b981;
+      box-shadow: 0 16px 36px rgba(16, 185, 129, 0.22);
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      animation: floatModal 6s ease-in-out infinite;
+      z-index: 3;
+    }
+
+    .broad-modal-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .broad-modal-icon {
+      width: 1.6rem;
+      height: 1.6rem;
+      background: #e7fff0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #10b981;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .broad-modal-title {
+      font-family: "Sora", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #07111f;
+    }
+
+    .broad-modal-status {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #10b981;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .broad-modal-desc {
+      font-size: 0.72rem;
+      line-height: 1.4;
+      color: #4b5563;
+      margin: 0;
+    }
+
+    .broad-modal-btn {
+      align-self: center;
+      background: #10b981;
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    /* Scattered avatars */
+    .broad-avatar {
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 3px solid #111827;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .broad-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .broad-avatar--1 {
+      top: 10%;
+      left: 3%;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      animation: floatAvatar1 7s ease-in-out infinite;
+    }
+
+    .broad-avatar--2 {
+      bottom: 8%;
+      left: 5%;
+      background: linear-gradient(135deg, #10b981, #047857);
+      animation: floatAvatar2 8s ease-in-out infinite;
+    }
+
+    .broad-avatar--3 {
+      top: 8%;
+      right: 3%;
+      background: linear-gradient(135deg, #ec4899, #be185d);
+      animation: floatAvatar3 6.5s ease-in-out infinite;
+    }
+
+    .broad-avatar--4 {
+      bottom: 12%;
+      right: 5%;
+      background: linear-gradient(135deg, #f59e0b, #b45309);
+      animation: floatAvatar4 7.5s ease-in-out infinite;
+    }
+
+    /* Mockup 2: Store & Platform Sync */
+    .pf-visual--store {
+      gap: 1.5rem;
+    }
+
+    .sync-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+      padding: 1.1rem;
+      width: 145px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      z-index: 2;
+      align-self: center;
+      transform: translateY(0);
+      transition: transform 300ms ease;
+    }
+
+    .pf-block:hover .sync-card {
+      transform: translateY(-4px);
+    }
+
+    .sync-card-label {
+      font-size: 0.58rem;
+      font-weight: 900;
+      color: rgba(17, 24, 39, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 0.35rem;
+    }
+
+    .sync-platform-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .sync-platform-icon {
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 6px;
+      background: #f1f5f9;
+      display: grid;
+      place-items: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .sync-arrow {
+      color: #10b981;
+      font-size: 0.9rem;
+      font-weight: 900;
+      animation: pulseSync 1.5s infinite;
+    }
+
+    .sync-status {
+      font-size: 0.6rem;
+      font-weight: 800;
+      color: #10b981;
+      background: #e7fff0;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      align-self: center;
+    }
+
+    /* iPhone preview frame */
+    .iphone-frame {
+      width: 175px;
+      height: 295px;
+      background: #000000;
+      border-radius: 30px;
+      border: 5px solid #374151;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      z-index: 2;
+    }
+
+    .iphone-notch {
+      position: absolute;
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 55px;
+      height: 14px;
+      background: #374151;
+      border-radius: 10px;
+      z-index: 10;
+    }
+
+    .iphone-screen {
+      flex-grow: 1;
+      background: #efeae2;
+      background-image: radial-gradient(rgba(19, 54, 41, 0.05) 10%, transparent 10%);
+      background-size: 12px 12px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .iphone-header {
+      background: #075e54;
+      color: #ffffff;
+      padding: 1.25rem 0.5rem 0.45rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .iphone-avatar {
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #075e54;
+      display: grid;
+      place-items: center;
+      font-size: 0.65rem;
+      font-weight: 900;
+    }
+
+    .iphone-header-text {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .iphone-header-text strong {
+      font-size: 0.65rem;
+      font-family: "Sora", sans-serif;
+      line-height: 1;
+    }
+
+    .iphone-header-text span {
+      font-size: 0.5rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .iphone-body {
+      flex-grow: 1;
+      padding: 0.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .iphone-bubble {
+      background: #ffffff;
+      border-radius: 8px;
+      border-top-left-radius: 0.15rem;
+      box-shadow: 0 4px 12px rgba(19, 54, 41, 0.06);
+      padding: 0.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      text-align: left;
+    }
+
+    .iphone-prod-img {
+      height: 52px;
+      background: linear-gradient(135deg, #e7fff0 0%, #d1fae5 100%);
+      border-radius: 5px;
+      display: grid;
+      place-items: center;
+      color: #10b981;
+      font-weight: bold;
+      font-size: 0.6rem;
+      position: relative;
+    }
+
+    .iphone-prod-badge {
+      position: absolute;
+      top: 0.2rem;
+      left: 0.2rem;
+      background: #075e54;
+      color: #ffffff;
+      font-size: 0.48rem;
+      font-weight: 800;
+      padding: 0.1rem 0.3rem;
+      border-radius: 99px;
+      text-transform: uppercase;
+    }
+
+    .iphone-bubble h4 {
+      margin: 0;
+      font-size: 0.68rem;
+      font-family: "Sora", sans-serif;
+      color: #07111f;
+      font-weight: 800;
+    }
+
+    .iphone-bubble p {
+      margin: 0;
+      font-size: 0.52rem;
+      color: #6b7280;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .iphone-bubble-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.1rem;
+    }
+
+    .iphone-price {
+      color: #075e54;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .iphone-stock {
+      font-size: 0.5rem;
+      color: #10b981;
+      background: #e7fff0;
+      padding: 0.1rem 0.25rem;
+      border-radius: 3px;
+      font-weight: 800;
+    }
+
+    .iphone-btn {
+      background: #075e54;
+      color: #ffffff;
+      border-radius: 99px;
+      font-size: 0.6rem;
+      font-weight: 800;
+      padding: 0.35rem;
+      text-align: center;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .iphone-user-bubble {
+      background: #d9fdd3;
+      border-radius: 8px;
+      border-top-right-radius: 0.15rem;
+      box-shadow: 0 2px 6px rgba(19, 54, 41, 0.04);
+      align-self: flex-end;
+      padding: 0.35rem 0.55rem;
+      font-size: 0.58rem;
+      font-weight: 800;
+      color: #112a1f;
+      animation: slideInBubble 4s ease-in-out infinite;
+    }
+
+    /* Mockup 3: Meta Business Partner */
+    .pf-visual--meta {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .meta-badge-card {
+      background: #0064e0;
+      width: 210px;
+      padding: 1.35rem;
+      border-radius: 16px;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      box-shadow: 0 15px 35px rgba(0, 100, 224, 0.4);
+      z-index: 2;
+      transform: scale(1);
+      transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pf-block:hover .meta-badge-card {
+      transform: scale(1.03);
+    }
+
+    .meta-logo-svg {
+      width: 90px;
+      height: auto;
+    }
+
+    .meta-badge-tag {
+      font-size: 0.56rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 0.5rem;
+      width: 100%;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .meta-partner-pill {
+      background: #10b981;
+      color: #ffffff;
+      font-family: "Sora", sans-serif;
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+      z-index: 2;
+    }
+
+    .meta-partner-dot {
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 8px #ffffff;
+      animation: blink 1.5s infinite;
+    }
+
+    /* Keyframe Animations */
+    @keyframes floatModal {
+      0%, 100% { transform: translate(-50%, -46%); }
+      50% { transform: translate(-50%, -52%); }
+    }
+
+    @keyframes floatAvatar1 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(3px, -5px); }
+    }
+
+    @keyframes floatAvatar2 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-4px, 4px); }
+    }
+
+    @keyframes floatAvatar3 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(4px, 5px); }
+    }
+
+    @keyframes floatAvatar4 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-3px, -4px); }
+    }
+
+    @keyframes pulseSync {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+
+    @keyframes slideInBubble {
+      0%, 100% { opacity: 0; transform: translateY(6px) scale(0.95); }
+      20%, 80% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Responsive adjustments for Premium Features section */
+    @media (max-width: 1080px) {
+      .pf-block-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .pf-block-grid--reverse {
+        direction: ltr;
+      }
+
+      .pf-visual {
+        order: 1;
+      }
+
+      .pf-card {
+        order: 2;
+      }
+
+      .pf-block-badge--yellow {
+        left: clamp(1.5rem, 3vw, 3.5rem);
+        right: auto;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .premium-features-section {
+        padding-block: 4.5rem;
+      }
+
+      .pf-block {
+        padding: 2.2rem 1.5rem 1.8rem;
+      }
+
+      .broad-win {
+        width: 100%;
+        height: 75%;
+      }
+
+      .iphone-frame {
+        width: 160px;
+        height: 275px;
+      }
+    }
   </style>
 </head>
 
@@ -2633,6 +3417,143 @@
           <h3>Reporting that operators use</h3>
           <p>Track conversations, response times, campaign outcomes, team workload, and automation impact.</p>
         </article>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         New Section: Powerful Features that you Need!
+         ========================================================================== -->
+    <section class="features-section premium-features-section reveal">
+      <div class="pf-header">
+        <h2>Powerful Features that you Need!</h2>
+        <p>One Platform for Everything WhatsApp</p>
+      </div>
+
+      <div class="pf-container">
+        <!-- Block 1: Marketing / Broadcast -->
+        <div class="pf-block pf-block--marketing">
+          <span class="pf-block-badge pf-block-badge--blue">Marketing</span>
+          <div class="pf-block-grid">
+            <div class="pf-visual pf-visual--broadcast">
+              <div class="broad-avatar broad-avatar--1"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Customer 1" /></div>
+              <div class="broad-avatar broad-avatar--2"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Customer 2" /></div>
+              <div class="broad-avatar broad-avatar--3"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Customer 3" /></div>
+              <div class="broad-avatar broad-avatar--4"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="Customer 4" /></div>
+              <div class="broad-win">
+                <div class="broad-win-head">
+                  <span class="broad-win-dots"><i></i><i></i><i></i></span>
+                  <span class="broad-win-title">Broadcast console</span>
+                </div>
+                <div class="broad-win-body">
+                  <div class="broad-win-line"></div>
+                  <div class="broad-win-line broad-win-line--short"></div>
+                  <div class="broad-win-line"></div>
+                </div>
+              </div>
+              <div class="broad-modal">
+                <div class="broad-modal-header">
+                  <span class="broad-modal-icon">✓</span>
+                  <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <span class="broad-modal-title">Broadcast Message</span>
+                    <span class="broad-modal-status">Completed Successfully!</span>
+                  </div>
+                </div>
+                <p class="broad-modal-desc">
+                  Scale your business communication effortlessly and reach 1000s of customers.
+                </p>
+                <span class="broad-modal-btn">View Report</span>
+              </div>
+            </div>
+            <div class="pf-card">
+              <span class="pf-card-tag">Broadcast WhatsApp Messages to 1000s in a single click</span>
+              <p class="pf-card-desc">
+                Scale your business communication effortlessly and reach 1000s of customers in one click. Automate up to 80% of queries with Connektly's easy-to-use drag and drop, no-code WhatsApp chatbot builder.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 2: E-Commerce -->
+        <div class="pf-block pf-block--ecommerce">
+          <span class="pf-block-badge pf-block-badge--yellow">E-Commerce</span>
+          <div class="pf-block-grid pf-block-grid--reverse">
+            <div class="pf-card">
+              <span class="pf-card-tag">Launch WhatsApp Store & Payments</span>
+              <p class="pf-card-desc">
+                Sync your catalog via Shopify, WooCommerce, or Excel, letting customers browse and buy on the go via WhatsApp Pay.
+              </p>
+            </div>
+            <div class="pf-visual pf-visual--store">
+              <div class="sync-card">
+                <span class="sync-card-label">Platform Sync</span>
+                <div class="sync-platform-row">
+                  <div class="sync-platform-icon" style="color: #95bf47;">S</div>
+                  <span class="sync-arrow">⇆</span>
+                  <div class="sync-platform-icon" style="color: #25d366;">W</div>
+                </div>
+                <span class="sync-status">Active</span>
+              </div>
+              
+              <div class="iphone-frame">
+                <div class="iphone-notch"></div>
+                <div class="iphone-screen">
+                  <div class="iphone-header">
+                    <span class="iphone-avatar">A</span>
+                    <div class="iphone-header-text">
+                      <strong>Artful Decor</strong>
+                      <span>Online Store</span>
+                    </div>
+                  </div>
+                  <div class="iphone-body">
+                    <div class="iphone-bubble">
+                      <div class="iphone-prod-img">
+                        <span class="iphone-prod-badge">WhatsApp Shop</span>
+                        <span>🎧</span>
+                      </div>
+                      <h4>Wireless Studio Pro</h4>
+                      <p>Active Noise Cancelling, 40h Battery</p>
+                      <div class="iphone-bubble-meta">
+                        <strong class="iphone-price">$189.00</strong>
+                        <span class="iphone-stock">In stock</span>
+                      </div>
+                      <button class="iphone-btn">Chat with Us</button>
+                    </div>
+                    <div class="iphone-user-bubble">
+                      🛒 Added 1x Wireless Studio Pro
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 3: Meta Partner -->
+        <div class="pf-block pf-block--partners">
+          <span class="pf-block-badge pf-block-badge--teal">Official Business Partners!</span>
+          <div class="pf-block-grid">
+            <div class="pf-visual pf-visual--meta">
+              <div class="meta-badge-card">
+                <svg class="meta-logo-svg" viewBox="0 0 100 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.348 24.316V10.684H10.97l3.655 7.643 3.656-7.643h3.585V24.31h-2.915V14.568l-3.376 6.945h-1.921l-3.376-6.945V24.31H7.348zm22.428-3.082c.164.843.913 1.347 1.838 1.347.855 0 1.57-.468 1.77-1.125h2.893c-.34 2.155-2.226 3.626-4.663 3.626-2.92 0-4.839-2.038-4.839-4.992 0-2.955 1.908-5.06 4.793-5.06 2.902 0 4.67 2.073 4.67 4.985v1.219H29.776zm4.723-2.144c-.118-.755-.785-1.248-1.7-1.248-.867 0-1.576.493-1.747 1.248H34.5zm11.758 7.22V15.719h-2.146V13.31h2.146V9.897h2.909v3.413h2.64v2.409h-2.64v6.621c0 .762.387 1.09 1.15 1.09.439 0 .89-.1 1.196-.246v2.41c-.492.204-1.266.304-2.064.304-2.199 0-3.191-.99-3.191-3.178zm13.172.93c-2.47 0-4.048-1.166-4.48-2.625h2.9c.27.533.82.855 1.57.855.75 0 1.272-.34 1.272-.856 0-.585-.592-.825-1.536-1.077-1.745-.468-3.52-.943-3.52-3.1 0-1.956 1.636-3.153 3.996-3.153 2.149 0 3.755 1.036 4.148 2.45h-2.82c-.229-.485-.75-.767-1.322-.767-.615 0-1.066.299-1.066.75 0 .532.551.756 1.488 1.006 1.83.486 3.568 1.001 3.568 3.167 0 2.215-1.722 3.35-4.198 3.35z" fill="#ffffff"/>
+                  <path d="M84.776 21.042c-1.348 0-2.45-1.102-2.45-2.45 0-1.348 1.102-2.45 2.45-2.45 1.348 0 2.45 1.102 2.45 2.45 0 1.348-1.102 2.45-2.45 2.45zm0-7.35c-2.701 0-4.9 2.199-4.9 4.9 0 2.701 2.199 4.9 4.9 4.9 2.701 0 4.9-2.199 4.9-4.9 0-2.701-2.199-4.9-4.9-4.9z" fill="#ffffff"/>
+                  <path d="M91.31 10.684H94.12v13.626H91.31V10.684z" fill="#ffffff"/>
+                </svg>
+                <span class="meta-badge-tag">Official Business Partner</span>
+              </div>
+              <div class="meta-partner-pill">
+                <span class="meta-partner-dot"></span>
+                <span>Powered by Official WhatsApp API</span>
+              </div>
+            </div>
+            <div class="pf-card">
+              <span class="pf-card-tag">Recognized by Meta as a Select Tier Business Partner</span>
+              <p class="pf-card-desc">
+                We're not just another WhatsApp Business Solution Provider; we are a Meta Select Tier Business Partner. This top-tier status means we get priority access to new WhatsApp features, giving you a competitive edge before anyone else.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

@@ -90,6 +90,16 @@
           grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(280px, 0.85fr) !important;
           gap: 0.75rem !important;
         }
+
+        .mega-menu--features {
+          grid-template-columns: 1fr !important;
+          gap: 0.75rem !important;
+        }
+      }
+
+      .nav-dropdown__menu--features {
+        width: 360px !important;
+        min-width: 0 !important;
       }
 
       .mega-menu__feature {
@@ -298,6 +308,7 @@
         }
 
         .mega-menu--solutions,
+        .mega-menu--features,
         .mega-menu--resources {
           grid-template-columns: 1fr !important;
           gap: 0.75rem !important;
@@ -1287,7 +1298,37 @@
               </div>
             </div>
           </div>
-          <a href="/features">Features</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown__toggle" type="button" aria-expanded="false">Features</button>
+            <div class="nav-dropdown__menu nav-dropdown__menu--mega nav-dropdown__menu--features">
+              <div class="mega-menu mega-menu--features">
+                <div class="mega-menu__column">
+                  <span class="mega-menu__heading">Channels and Integrations</span>
+                  <a href="/solutions/whatsapp-api" class="has-desc">
+                    <span class="dropdown-item-icon" style="padding: 4px;"><img src="${fromRoot("Social Media Icons/WhatsApp.svg")}" style="width: 100%; height: 100%; object-fit: contain;" alt="WhatsApp" /></span>
+                    <span>
+                      <span class="dropdown-item-label">WhatsApp Business</span>
+                      <span class="dropdown-item-desc">Engage customers on the world's most popular messaging app</span>
+                    </span>
+                  </a>
+                  <a href="/features/messenger/" class="has-desc">
+                    <span class="dropdown-item-icon" style="padding: 4px;"><img src="${fromRoot("Social Media Icons/Messenger.svg")}" style="width: 100%; height: 100%; object-fit: contain;" alt="Messenger" /></span>
+                    <span>
+                      <span class="dropdown-item-label">Messenger</span>
+                      <span class="dropdown-item-desc">Connect with billions of users on Facebook Messenger</span>
+                    </span>
+                  </a>
+                  <a href="/features" class="has-desc">
+                    <span class="dropdown-item-icon" style="padding: 4px;"><img src="${fromRoot("Social Media Icons/Instagram.png")}" style="width: 100%; height: 100%; object-fit: contain;" alt="Instagram" /></span>
+                    <span>
+                      <span class="dropdown-item-label">Instagram</span>
+                      <span class="dropdown-item-desc">Turn followers into customers through Instagram Direct</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
           <a href="/pricing">Pricing</a>
           <div class="nav-dropdown">
             <button class="nav-dropdown__toggle" type="button" aria-expanded="false">Resources</button>
